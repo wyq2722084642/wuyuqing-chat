@@ -132,6 +132,10 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
+app.get("/api/version", (req, res) => {
+  res.json({ commit: "180d3e1", has_gf: SYSTEM_PROMPT.includes("小猫紫凝酱") });
+});
+
 const PORT = process.env.PORT || 3456;
 app.listen(PORT, () => {
   console.log(`Chat server running at http://localhost:${PORT}`);
